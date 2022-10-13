@@ -1,0 +1,5 @@
+.cloth-section {display: flex; width: 100%; flex-flow: row wrap; justify-content: space-between;}
+.cloth-section .cloth-menu {width: calc(100%/3); position: relative; padding: 1.5rem .75rem ; transition: all .5s;}
+.cloth-section .cloth-menu a {display: flex; align-items: center; justify-content: center;}
+.cloth-section .cloth-menu p {font-family: 'OPTIMA',serif; font-size: 4vw; color: #fff; position: absolute;}
+.cloth-menu img {width: 100%; height:initial; object-fit: cover; }

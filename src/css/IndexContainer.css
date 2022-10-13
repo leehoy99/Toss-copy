@@ -1,0 +1,116 @@
+* {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+body {overflow-x: hidden;}
+body::-webkit-scrollbar {width: 8px;}
+body::-webkit-scrollbar-thumb {height: 30%; background: #000;}
+body::-webkit-scrollbar-track {background: #fff; opacity: 0;}
+.container {width: 100%; display: flex; flex-flow: column wrap; margin: 0 auto;}
+ul, li{list-style: none;}
+a:visited, a:link {text-decoration: none; color: inherit;}
+
+.top {display: none; width: 40px; height: 40px; border: 0.5px solid #fff; background: #fff; border-radius: 50%; position: fixed; bottom: 12vh; right: 2vh; text-align: center; font-size: 25px; line-height: 32px; z-index: 999999; text-indent: 2px; font-weight: lighter; font-family: arial;}
+
+
+@media screen and (max-width: 1366px) {
+    /* nav영역 */
+    .nav-top {height: 70px;}
+    .nav-top .gnb > ul > li {font-size: 8px; height: 40px;}
+    .nav-top .nav-gnb1_extand {top: 70px;}
+    .nav-top .nav-gnb3_extand {top: 70px;}
+    .nav-top .nav-gnb4_extand {top: 70px;}
+
+    /* 갤러리영역 */
+    .gallery .gallery-img-02::before {line-height: 900px; font-size: 4vw;} 
+}
+
+@media screen and (max-width: 963px) {
+
+    /* 헤더 영역 */
+
+    .header {width: 100%; height: 100vh; position: relative; display: flex; align-items: center; justify-content: center;}
+    .header .header-text {top: 25vh;}
+    .header .header-text .header-text1{font-size: 11.5vw;line-height: .9em;}
+    .header .header-text .header-text2{font-size: .9em; line-height: 1.2em; margin-top: 28px;}
+
+    /* nav 영역 */
+
+    .nav-top-sticky .L-gnb, .nav-top-sticky .R-gnb {display: none;}
+    .nav-bottom-sticky {display: block;}
+    .nav-top {justify-content: center; height: 8vh;}
+    .nav-top .title {font-size: 2vh; line-height: 3vh;}
+
+    /* 아이콘 */
+
+    .react-i {display: block;}
+    .material-symbols-outlined {top: 2vh;}
+
+    /* clothsection */
+
+    .cloth-section .cloth-menu {width: calc(100%/2);}
+    .cloth-section .cloth-menu:last-child {width: 100%; padding-top: 0;}
+    .cloth-section .cloth-menu:last-child p {font-size: 8vw;}
+
+    /* athletics 영역 */
+
+    #athletics {display: block; height: auto;}
+    .athletics-text {width: 100%; overflow-y: auto; padding-bottom:2rem ;}
+    .athletics-text p {font-size: 1.5rem;}
+    .athletics-img {width: 100%;}
+
+    /* 갤러리영역 */
+
+    .gallery {padding: 0.75rem;}
+    .gallery_list {grid-template-rows: 250px 250px; gap: .75rem;}
+    .gallery_list_05 {display: none;}
+    .gallery .gallery-img-01::before {line-height: 300px;} 
+    .gallery .gallery-img-02::before {line-height: 500px; font-size: 3vw;} 
+    .gallery .gallery-img-03::before {line-height: 300px;}
+    .gallery .gallery-img-04::before {line-height: 300px;}
+    .gallery .gallery-img-05::before {display: none;}
+
+    /* bottom 영역 */
+
+    .bottom-menu {padding-bottom: 5rem; display: block;}
+    .contact-section {display: block; margin: 0; width: 100%; padding: 0 0.75rem;}
+    .contact {padding: 0; margin: 0; display: block; width: 100%;}
+    .contact h4 {font-size: .9rem}
+    .contact .email {width: 40vw; font-size: 1.5vh;}
+    .contact .email::placeholder {font-size: .3rem;}
+    .footer-section {display: block; margin: 0; width: 100%; padding: 2rem 0.75rem 2rem .75rem;}
+    .footer {width: 100%; display: flex; justify-content: space-between;}
+    .footer p {margin: 0; padding: 0;}
+
+}
+
+@media screen and (max-width: 767px) { 
+
+    /* 헤더 영역 */
+
+    .header .header-img {width: auto; height: 100vh; background: url(../../public/Images/11.png) no-repeat center center/cover;}
+    .header .header-img img {opacity: 0;}
+
+    /* 아이콘 영역 */
+
+    .material-symbols-outlined {margin-top: 1vh;}
+
+    /* nav 영역 */
+
+    .nav-top {width: 100%; height: 10vh;}
+    .nav-top .title {font-size: 1.7rem; line-height: 5vh;}
+    .nav-bottom-sticky {top: 90vh;}
+    .nav-bottom {height: 10vh;}
+    .nav-bottom .gnb > ul {margin-top: 2vh;}
+
+    /* athletics */
+    
+    .athletics-text{display: none;}
+
+    /* footer 영역 */
+    
+    .contact h4 {font-size: 1.5rem}
+    .contact .email {width: 100%; height: 30px; font-size: 1.7vh;}
+    .contact .email::placeholder {font-size: 1.7vh;}
+    .footer {flex-flow: column wrap;}
+    .footer p{ width: 100%; margin-bottom: 35px; font-size: 2.5vw; font-weight: 100;}
+
+    .top {display:inline;}
+}
