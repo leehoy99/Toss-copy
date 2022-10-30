@@ -3,7 +3,52 @@ $(function() {
         $('.section1 .paragraph-box').addClass('on');
         $('.section1 .app-button').addClass('on');
         $('.section1 .down-arrow').addClass('on');
+        $('.section1 .down-arrow::after').addClass('on');
     }, 1300);
+    
+
+
+    let clickCount = 0;
+        $('.nav-box .response-box .app-download-btn').click(function (){ 
+            if(clickCount%2 == 0)
+            {
+                $('.nav-box .response-box .app-download-menu').css({'display':'flex'});
+                clickCount ++
+            } else {
+                $('.nav-box .response-box .app-download-menu').css({'display':'none'});
+                clickCount ++
+            };
+        });
+        $('.nav-box .response-box .toggle-btn').click(function (){ 
+
+            if(clickCount%2 == 0)
+            {
+                $('.nav-box .response-box .toggle-btn-on').css({'opacity':'0'});
+                $('.nav-box .response-box .toggle-btn-off').css({'opacity':'0.35'});
+                $('.toggle-menu').slideToggle('fast');
+                $('.toggle-menu').css({'display':'block'});
+                clickCount ++;
+            } else {
+                $('.nav-box .response-box .toggle-btn-on').css({'opacity':'0.35'});
+                $('.nav-box .response-box .toggle-btn-off').css({'opacity':'0'});
+                $('.toggle-menu').slideToggle('fast');
+                clickCount ++;
+            };
+            $('section').click(function() {
+                if(clickCount%2 !== 0) {
+                    $('.nav-box .response-box .toggle-btn-on').css({'opacity':'0.35'});
+                    $('.nav-box .response-box .toggle-btn-off').css({'opacity':'0'});
+                    $('.toggle-menu').slideToggle('fast');
+                    clickCount ++
+                }
+            })
+        });
+
+
+    $('.down-arrow').click(function(){
+        const dis = $('.section2').offset().top;
+        $('html').animate({scrollTop: dis}, 1000)
+    })
     $(window).scroll(function () {         
         
         // nav-fix
@@ -176,4 +221,5 @@ $(function() {
             $('.section11 .contents .sub').addClass('ani');
         }
     });
+    $(window).trigger('scroll');
 })

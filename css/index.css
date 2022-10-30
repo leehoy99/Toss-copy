@@ -3,6 +3,7 @@
 :root {--main-color: #fff; --sub-color: #000; --third-color: #3182f6; --sub-color-opacity: rgba(0, 0, 0, 0.7); --bg-color: #f9fafb;}
 h1,h2,h3,h4,h5 {letter-spacing: -0.12rem;}
 *{margin: 0; padding: 0;}
+a:visited , a:link {text-decoration: none; color: inherit;}
 html {box-sizing: border-box;}
 body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;}
 
@@ -18,12 +19,48 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
 .nav .lang .ko.on  {color: #000; opacity: 1}
 .nav .lang .en.on  {color: #000; opacity: 1;}
 
+
+
 /* nav-fixed */
 .nav.fixed {position: fixed; background-color: var(--main-color); border-bottom: 1px solid rgb(231, 231, 231);}
 
 /* nav-responsible */
 
-.nav-box svg {display: none; opacity: 0; position: absolute; width: 25px; height: 25px; top: 20px; right: 0;}
+.nav-box .response-box {display: none; opacity: 0; text-indent: 999999px; width: fit-content; position: relative; z-index: 110;}
+.nav-box .response-box .toggle-btn-box {width: fit-content; height: fit-content; position: relative;}
+.nav-box .response-box .toggle-btn {scale: 1.3; opacity: 0.35; cursor: pointer;}
+.nav-box .response-box .toggle-btn-off {position: absolute; top: 50%; left: 0; transform: translateY(-40%) scaleY(0.9); scale: 1.3;}
+.nav-box .response-box .toggle-btn-off {opacity: 0;}
+
+
+
+.nav-box .response-box .app-download-btn {width: 76px; height: 32px; display: flex; align-items: center; background-color: var(--third-color); justify-content: center; border-radius: 16px; margin-right: 24px; position: relative; cursor: pointer;}
+.nav-box .response-box .app-download-btn p {font-size: 11.5px; font-weight: bold; color: var(--main-color); letter-spacing: -0.5px;}
+
+
+
+
+.nav-box .response-box .app-download-menu {width: fit-content; height: fit-content; border-radius: 10px; background-color: var(--main-color); position: fixed; top: 130%; right: -22px; box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 12px 3px; display: flex; flex-flow: column;}
+.nav-box .response-box .app-download-menu {display: none;}
+
+.nav-box .response-box .app-download-menu .app-button {width: fit-content; height: fit-content; display: flex; flex-flow: column; align-items: center; padding: 6px; gap: 6px;}
+.nav-box .response-box .app-download-menu .app-button .appStore,
+.nav-box .response-box .app-download-menu .app-button .googlePlay {display: flex; width: 200px; height: 53px; justify-content: flex-start; align-items: center; border-radius: 10px; color: var(--third-color); font-weight: bold; cursor: pointer; font-size: 14px;}
+.nav-box .response-box .app-download-menu .appStore .appStore-icon, 
+.nav-box .response-box .googlePlay .googlePlay-icon {width: 18px; height: 18px; display: block; margin: 0 10px 0 20px;}
+
+.nav-box .response-box .app-download-menu .appStore:hover {background-color: rgb(230, 230, 230); transition: background-color .4s;}
+.nav-box .response-box .app-download-menu .googlePlay:hover {background-color: rgb(230, 230, 230); transition: background-color .4s;}
+
+.toggle-menu {display: block; width: 100%; height: fit-content; position: fixed; top: 3.6rem; left: 0; background-color: #fff; z-index: 9999;}
+.toggle-menu {display: none;}
+.toggle-menu .toggle-list {width: 100%; height: fit-content; padding: 17px 20px 17px 20px;}
+.toggle-menu .toggle-list p {font-size: 0.9rem; letter-spacing: -1px;}
+.toggle-menu .lang {list-style: none; display: flex; align-items: center; cursor: pointer; padding-bottom: 10px;}
+.toggle-menu .lang p {font-size: 0.95rem; color: #8b95a1; opacity: 0.7;}
+.toggle-menu .lang span {width: 2px; height: 15px; background: #ccc; margin: 0 20px;}
+.toggle-menu .lang .ko.on  {color: #000; opacity: 1; }
+.toggle-menu .lang .en.on  {color: #000; opacity: 1;}
 
 /* section1 */
 
@@ -34,27 +71,29 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
 .section1 .paragraph-box {position: absolute; text-align: center; font-size: 40px; top: 180px; z-index: 11; opacity: 0;}
 
 .section1 .app-button {position: absolute; top: 410px; display: flex; gap: 4px; z-index: 12; opacity: 0;}
-.app-button .appStore, .app-button .googlePlay {display: flex; width: 175px; height: 65px; background-color: var(--sub-color-opacity); justify-content: center; align-items: center; border-radius: 8px; color: var(--main-color); font-weight: bold; cursor: pointer;}
-.appStore .appStore-icon, .googlePlay .googlePlay-icon {width: 24px; height: 24px; display: block; margin-right: 10px;}
 
-.appStore:hover {background-color: rgb(80, 80, 80); transition: background-color .4s;}
-.googlePlay:hover {background-color: rgb(80, 80, 80); transition: background-color .4s;}
+.section1 .app-button .appStore, 
+.section1 .app-button .googlePlay {display: flex; width: 175px; height: 65px; background-color: var(--sub-color-opacity); justify-content: center; align-items: center; border-radius: 8px; color: var(--main-color); font-weight: bold; cursor: pointer;}
+.section1 .appStore .appStore-icon, 
+.section1 .googlePlay .googlePlay-icon {width: 24px; height: 24px; display: block; margin-right: 10px;}
 
+.section1 .appStore:hover {background-color: rgb(80, 80, 80); transition: background-color .4s;}
+.section1 .googlePlay:hover {background-color: rgb(80, 80, 80); transition: background-color .4s;}
 
-.section1 .down-arrow {width: 40px; position: absolute; bottom: 2%; opacity: 0;}
-.section1 .down-arrow .down-arrow-icon { width: 100%;}
-.section1 .down-arrow .down-arrow-icon img {width: 100%; transform: scaleX(2.4); filter: brightness(0.6); animation: down-arrow-ani 3.3s ease-in-out infinite;}
+.section1 .down-arrow {width: 100%; display: block; opacity: 0.4; position: absolute; bottom: 4%; left: 50%; width: fit-content; animation: down-arrow-ani 3s infinite; display: none; opacity: 0;}
+.section1 .down-arrow::before {opacity: .2; cursor: pointer;}
+
 
 .section1 .paragraph-box.on {opacity: 1; transition: opacity .3s;}
 .section1 .app-button.on {opacity: 1; transition: opacity .3s;}
-.section1 .down-arrow.on {opacity: 1; transition: opacity .3s;}
+.section1 .down-arrow.on {opacity: 1; transition: opacity .3s; display: block;}
 
 @keyframes down-arrow-ani {
-    0% {transform: scaleX(2.4) translateY(-30px); opacity: 0;}
-    20% {transform: scaleX(2.4) translateY(0px); opacity: 1;}
-    50% {transform: scaleX(2.4) translateY(-10px); }
-    80% {transform: scaleX(2.4) translateY(0px); opacity: 1;}
-    100% {transform: scaleX(2.4) translateY(-30px); opacity: 0;}
+    0% {transform: scaleX(3.2) scaleY(1.5) translateY(-15px); opacity: 0;}
+    20% {transform: scaleX(3.2) scaleY(1.5) translateY(0px); opacity: 1;}
+    50% {transform: scaleX(3.2) scaleY(1.5) translateY(-10px); }
+    80% {transform: scaleX(3.2) scaleY(1.5) translateY(0px); opacity: 1;}
+    100% {transform: scaleX(3.2) scaleY(1.5) translateY(-15px); opacity: 0;}
 }
 
 
@@ -87,8 +126,9 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
 .section3 .contents .section-img-2-box .inner-img {position: absolute; top: 0; right: -100px; height: 936px; width: 600px; z-index: -1;}
 .section3 .contents .section-img-2-box .inner-img img {width: 57%; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); }
 
-.section3 .contents .sub-paragraph {position: absolute; bottom: 0; right: 0; height: 936px; width: 50%; display: flex; align-items: flex-end; justify-content: center; z-index: 12;}
-.section3 .contents .sub-paragraph .paragraph-text {font-size: 30px;}
+.section3 .contents .sub-paragraph {position: absolute; bottom: 0; right: 0; height: 936px; width: 50%; display: flex; align-items: flex-end; justify-content: flex-end
+    ; z-index: 12;}
+.section3 .contents .sub-paragraph .paragraph-text {font-size: 23px; color: rgba(0, 0, 0, 0.7); font-weight: 600; padding: 0 0 125px 0;}
 
 /* section3 - ani */
 
@@ -116,7 +156,8 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
 
 .contents-box .contents-paragraph-box {width: 45%; padding-left: 40px; display: flex; align-items: center;}
 .contents-paragraph {width: 100%; display: flex; justify-content: center; flex-flow: column; padding-left: 40px;}
-.contents-paragraph .contents-paragraph-title {color: var(--third-color); font-size: 15px;}
+.contents-paragraph .contents-paragraph-title {color: var(--third-color); height: 25px; font-size: 17px; display: flex; align-items: center;}
+.contents-paragraph .contents-paragraph-title svg {height: 100%; object-fit: cover; margin-right: 5px;}
 .contents-paragraph h3 {font-size: 37px; line-height: 3.5rem; }
 .contents-paragraph h4 {margin-top: 40px; font-size: 20px; color: var(--sub-color-opacity); }
 
@@ -406,21 +447,22 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
 .footer .contents .footer-sns img {margin-right: 5px;}
 
 @media screen and (max-width: 870px) {
+    body {overflow-x: hidden;}
     .nav .list, .nav .lang {transform: translateY(-50px); transition: transform .2s;}
-    .nav-box svg {display: block; opacity: 1;}
 
 }
 @media screen and (max-width: 640px) {
     
     
     body {overflow-x: hidden;}
-    .br-response {display: inline;}
+    .nav .response-box {display: flex; align-items: center; text-indent: 0; opacity: 1; width: fit-content; position: absolute; top: 50%; right: 0; transform: translateY(-50%);}
+    
     /* section1 */
     
     .section1 .paragraph-box {margin-top: -75px;}
     .section1 .paragraph-box h1 {font-size: 32px; letter-spacing: -5px; line-height: 45px;}
-    .section1 .app-button .appStore, .app-button .googlePlay {margin-top: -145px;}
-    .section1 .app-button .appStore p, .app-button .googlePlay p {margin-top: -3px; font-size: 15px; margin-left: -4px;}
+    .section1 .app-button .appStore, .section1 .app-button .googlePlay {margin-top: -145px;}
+    .section1 .app-button .appStore p, .section1 .app-button .googlePlay p {margin-top: -3px; font-size: 15px; margin-left: -4px;}
     .appStore .appStore-icon, .googlePlay .googlePlay-icon {width: 21px; height: 21px;}
 
     /* section2 */
